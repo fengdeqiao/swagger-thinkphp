@@ -8,7 +8,7 @@
 ## 第一步：安装swagger-ui前端
 下载thinkphp3.2框架解压后放到网站根目录中改名tp
 
-```
+```php
 git clone https://github.com/swagger-api/swagger-ui.git
 ```
 
@@ -26,7 +26,7 @@ git clone https://github.com/swagger-api/swagger-ui.git
 
 ## 第二步：安装swagger-php后端
 
-进入你的tp框架中，找到与index.php同级目录的composer.json文件，打开文件在require下面加上"zircote/swagger-php": "*"一行，然后在当前目录下按住 shift + 右键 选择 ‘在此处打开命令窗口’ ，执行 composer update 等待安装完成 或者 直接在当前目录中按住 shift + 右键 选择 ‘在此处打开命令窗口’ 运行`composer require zircote/swagger-php`安装swagger-php。详情安装步骤见https://github.com/zircote/swagger-php。
+进入你的tp框架中，找到与index.php同级目录的composer.json文件，打开文件在require下面加上`"zircote/swagger-php": "*"`一行，然后在当前目录下按住 `shift + 右键` 选择 ‘在此处打开命令窗口’ ，执行` composer update `等待安装完成 或者 直接在当前目录中按住` shift + 右键 `选择 ‘在此处打开命令窗口’ 运行`composer require zircote/swagger-php`安装swagger-php。详情安装步骤见 https://github.com/zircote/swagger-php。
 
 提示安装完成后执行` composer global require zircote/swagger-php`会在你tp项目的vendor中生成一个zircote的组件文件夹，说明已经安装插件成功了。
 
@@ -40,10 +40,10 @@ php E:/wamp64/www/tp/vendor/zircote/swagger-php/bin/swagger E:/wamp64/www/tp/ven
 
 ### 注意：第一个路径是你安装成功后组件的路径；第二个路径是你想要生成这个目录下所有用swagger方式注释的php文件，把所有注释生成api文档；第三个路径是你存放生成swagger.json的路径。
 
-然后再看`http://localhost/swagger-ui/dist/index.html`, 是不是生成了API文档。 准备工作都做好了, 那就写代码注释就行了, 注释怎么写? 参考官方文档http://zircote.com/swagger-php/annotations.html
+然后再看`http://localhost/swagger-ui/dist/index.html`, 是不是生成了API文档。 准备工作都做好了, 那就写代码注释就行了, 注释怎么写? 参考官方文档 http://zircote.com/swagger-php/annotations.html
 
 比如model的注释写法
-```
+```php
 /**
 * @SWG\Model(
 * id="vps",
@@ -59,7 +59,7 @@ class HostVps extends Host implements ResourceInterface
 }
 ```
 控制器的注释写法
-```
+```php
 /**
  * @SWG\Resource(
  *  basePath="http://skyapi.dev",
@@ -91,10 +91,10 @@ class VpsController extends Controller
 
 如果我们每次修改了api，还要手动执行第三步的代码，有些繁琐，那我们就在控制器中写一个方法，每次访问swagger-ui的时候自动执行，然后跳转到前台swagger界面中。
 
-注意：在thinkphp的入口文件index.php中加入require './vendor/autoload.php';
+注意：在thinkphp的入口文件index.php中加入`require './vendor/autoload.php'`;
 
 下面是控制器里面的方法
-```
+```php
 $path = 'E:\wamp64\www\tp'; //你想要哪个文件夹下面的注释生成对应的API文档
 $swagger = \Swagger\scan($path);
 //header('Content-Type: application/json');
