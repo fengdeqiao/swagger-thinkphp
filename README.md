@@ -8,7 +8,7 @@
 ## 第一步：安装swagger-ui前端
 下载thinkphp3.2框架解压后放到网站根目录中改名tp
 
-	```
+	```php
 	git clone https://github.com/swagger-api/swagger-ui.git
 	```
 
