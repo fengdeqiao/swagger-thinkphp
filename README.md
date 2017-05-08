@@ -8,7 +8,9 @@
 ## 第一步：安装swagger-ui前端
 下载thinkphp3.2框架解压后放到网站根目录中改名tp
 
-	``git clone https://github.com/swagger-api/swagger-ui.git``
+	```
+	git clone https://github.com/swagger-api/swagger-ui.git
+	```
 
 下载完成之后，将文件夹放到你的网站根目录上面，例如我是放在我wamp下面的www目录。
 
@@ -32,7 +34,7 @@
 
 直接在命令行中输入
 
-	`php E:/wamp64/www/tp/vendor/zircote/swagger-php/bin/swagger E:/wamp64/www/tp/vendor/zircote/swagger-php/Examples -o E:/wamp64/www/tp/swagger-docs`
+	php E:/wamp64/www/tp/vendor/zircote/swagger-php/bin/swagger E:/wamp64/www/tp/vendor/zircote/swagger-php/Examples -o E:/wamp64/www/tp/swagger-docs
 
 生成swagger.json文件。
 
