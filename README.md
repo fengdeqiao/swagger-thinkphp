@@ -8,13 +8,13 @@
 ## 第一步：安装swagger-ui前端
 下载thinkphp3.2框架解压后放到网站根目录中改名tp
 
-	```php
-	git clone https://github.com/swagger-api/swagger-ui.git
-	```
+```
+git clone https://github.com/swagger-api/swagger-ui.git
+```
 
 下载完成之后，将文件夹放到你的网站根目录上面，例如我是放在我wamp下面的www目录。
 
-接着找到dist目录, 打开index.html把其中的那一串url改成自己的 比如http://localhost/tp/swagger-docs/swagger.json
+接着找到dist目录, 打开index.html把其中的那一串url改成自己的 比如`http://localhost/tp/swagger-docs/swagger.json`
 
 如果你想支持中文在index.html中加上
 
